@@ -1,0 +1,23 @@
+.idea/
+# CLion
+c/.idea/*
+c/cmake-build-debug/*
+c/cmake-build-release/*
+c/auth
+c/app
+c/*.o
+c/vgcore.*
+vgcore.*
+c/build
+c/debug
+
+
+# Pycharm
+www/__pycache__/
+*.py[cod]
+
+# Misc
+*.pem
+*.pub
+www/*.pem
+www/*.pub
