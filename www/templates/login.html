@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+<body>
+<h1>Login</h1>
+<form action="logmein" method="POST">
+    Username <input type="text" name="username">
+    Password <input type="password" name="password">
+    Submit <input type="submit">
+</form>
+{% if login_message %}
+    <li>{{ login_message }}</li>
+{% endif %}
+{%  with messages = get_flashed_messages() %}
+{% if messages %}
+    <ul class="flashes">
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endwith %}
+</body>
+
+</html>

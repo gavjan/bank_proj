@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+<a href='logout' class="button"><button>Logout</button></a>
+<ul aria-label="Deposits:">
+{% if deposits is defined and deposits|length > 0 %}
+
+    {% for deposit in deposits %}
+        <a href="view?type=deposit&num={{ deposit }}"><li>Deposit No. {{ deposit }}</li></a>
+    {% endfor %}
+
+{% else %}
+    <li>No Deposits</li>
+{% endif %}
+</ul>
+
+<ul aria-label="Credits:">
+{% if credits is defined and credits|length > 0 %}
+
+    {% for credit in credits %}
+        <a href="view?type=credit&num={{ credit }}"><li>Credit No. {{ credit }}</li></a>
+    {% endfor %}
+{% else %}
+    <li>No Credits</li>
+{% endif %}
+</ul>
+</body>
+
+</html>
